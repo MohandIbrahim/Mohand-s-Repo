@@ -18,11 +18,10 @@ class PhotosAdapter (private var photosList: ArrayList<PhotosModel.PhotosModelIt
         return ViewHolder(binding)
     }
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        Log.e("TAG", photosList[position].title)
-        holder.binding.photoItem.loadImageFromUrl(photosList[position].thumbnailUrl)
+        holder.binding.photoItem.loadImageFromUrl(photosList[position].url)
         holder.binding.photoItem.setOnClickListener {
             photosList[position].title.let { photoTitle ->
-                photosList[position].thumbnailUrl.let { photoUrl ->
+                photosList[position].url.let { photoUrl ->
                     itemClickListener.invoke(photoTitle, photoUrl)
                 }
             }
@@ -30,5 +29,10 @@ class PhotosAdapter (private var photosList: ArrayList<PhotosModel.PhotosModelIt
     }
     override fun getItemCount(): Int {
         return photosList.size
+    }
+
+    fun filterList(filteredList: ArrayList<PhotosModel.PhotosModelItem>) {
+        this.photosList = filteredList
+        notifyDataSetChanged()
     }
 }

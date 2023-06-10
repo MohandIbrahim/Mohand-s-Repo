@@ -1,6 +1,6 @@
 package com.test.bostatask.data.remote
 
-import com.test.agent.common.utils.Constants
+import com.test.bostatask.common.utils.Constants
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

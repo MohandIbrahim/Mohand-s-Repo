@@ -4,8 +4,6 @@ import com.test.bostatask.data.models.AlbumsModel
 import com.test.bostatask.data.models.PhotosModel
 import com.test.bostatask.data.models.UsersModel
 import retrofit2.http.GET
-import retrofit2.http.Header
-import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface ApiServices

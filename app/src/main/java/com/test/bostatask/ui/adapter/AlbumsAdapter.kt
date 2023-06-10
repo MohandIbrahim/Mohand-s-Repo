@@ -1,6 +1,5 @@
 package com.test.bostatask.ui.adapter
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -17,7 +16,6 @@ class AlbumsAdapter(private var albumsList: ArrayList<AlbumsModel.AlbumsModelIte
         val binding = ItemLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.binding.listItem.text = albumsList[position].title
         holder.binding.listItem.setOnClickListener {
@@ -26,7 +24,6 @@ class AlbumsAdapter(private var albumsList: ArrayList<AlbumsModel.AlbumsModelIte
             }
         }
     }
-
     override fun getItemCount(): Int {
         return albumsList.size
     }

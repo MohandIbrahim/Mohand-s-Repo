@@ -8,11 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.test.bostatask.common.extensions.showToast
-import com.test.bostatask.data.models.navigation.UserArgs
 import com.test.bostatask.databinding.FragmentProfileBinding
 import com.test.bostatask.ui.adapter.AlbumsAdapter
-import com.test.bostatask.ui.adapter.UsersAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -32,8 +29,6 @@ class ProfileFragment :Fragment() {
         binding.profileAddress.text= args.userArgs.address
         getAlbums()
     }
-
-
     private fun getAlbums(){
         viewModel.getAlbums(args.userArgs.userId).observe(viewLifecycleOwner){
             val adapter = AlbumsAdapter(it,::itemsOnClickListener )
@@ -41,7 +36,6 @@ class ProfileFragment :Fragment() {
             adapter.notifyItemInserted(it.size - 1)
         }
     }
-
     private fun itemsOnClickListener(albumId:Long){
         var action = ProfileFragmentDirections.actionProfileFragmentToPhotosFragment(albumId)
         findNavController().navigate(action)

@@ -5,7 +5,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.test.agent.common.utils.Resource
 import com.test.bostatask.data.models.AlbumsModel
 import com.test.bostatask.data.models.PhotosModel
 import com.test.bostatask.data.models.UsersModel
@@ -13,7 +12,6 @@ import com.test.bostatask.data.repository.MainRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import java.util.*
 import javax.inject.Inject
 import kotlin.collections.ArrayList
 
@@ -51,17 +49,15 @@ class SharedViewModel @Inject constructor(private val mainRepository: MainReposi
                             )
                         )
                     }
-                    Log.e("Array", this@SharedViewModel.userList.size.toString())
                     _usersVisitList.postValue(this@SharedViewModel.userList)
                 }
             } catch (e: Exception) {
                 Log.d("catch", e.message.toString())
-
             }
         }
     }
 
-     fun getAlbums(userId: Long) : LiveData<ArrayList<AlbumsModel.AlbumsModelItem>> {
+    fun getAlbums(userId: Long): LiveData<ArrayList<AlbumsModel.AlbumsModelItem>> {
         albumsList = ArrayList()
 
         viewModelScope.launch(Dispatchers.IO) {
@@ -69,7 +65,8 @@ class SharedViewModel @Inject constructor(private val mainRepository: MainReposi
                 val response = mainRepository.getUserAlbums(userId)
                 if (response.isNotEmpty()) {
                     for (index in 0 until response.size) {
-                        albumsList.add(albumsList.size,
+                        albumsList.add(
+                            albumsList.size,
                             AlbumsModel.AlbumsModelItem(
                                 response[index].id,
                                 response[index].title
@@ -79,13 +76,13 @@ class SharedViewModel @Inject constructor(private val mainRepository: MainReposi
                     getAlbumsResponse.postValue(albumsList)
                 }
             } catch (e: Exception) {
-             Log.e("TAG",e.toString())
+                Log.e("TAG", e.toString())
             }
         }
         return getAlbumsResponse
     }
 
-    fun getPhotos(albumId: Long) : LiveData<ArrayList<PhotosModel.PhotosModelItem>> {
+    fun getPhotos(albumId: Long): LiveData<ArrayList<PhotosModel.PhotosModelItem>> {
         photosList = ArrayList()
 
         viewModelScope.launch(Dispatchers.IO) {
@@ -93,17 +90,18 @@ class SharedViewModel @Inject constructor(private val mainRepository: MainReposi
                 val response = mainRepository.getAlbumPhotos(albumId)
                 if (response.isNotEmpty()) {
                     for (index in 0 until response.size) {
-                        photosList.add(photosList.size,
+                        photosList.add(
+                            photosList.size,
                             PhotosModel.PhotosModelItem(
                                 response[index].title,
-                                response[index].thumbnailUrl
+                                response[index].url
                             )
                         )
                     }
                     getPhotosResponse.postValue(photosList)
                 }
             } catch (e: Exception) {
-                Log.e("TAG",e.toString())
+                Log.e("TAG", e.toString())
             }
         }
         return getPhotosResponse

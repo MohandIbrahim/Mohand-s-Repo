@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.test.bostatask.common.extensions.showToast
 import com.test.bostatask.data.models.navigation.UserArgs
 import com.test.bostatask.databinding.FragmentUsersBinding
 import com.test.bostatask.ui.adapter.UsersAdapter
@@ -36,8 +35,6 @@ class UsersFragment : Fragment() {
     }
 
     private fun itemsOnClickListener(userID:Long, userName:String, userAddress:String){
-      //  showToast("$userID, $userName, $userAddress")
-
         var userArgs = UserArgs(userAddress,userID,userName)
         var action = UsersFragmentDirections.actionUsersFragmentToProfileFragment(userArgs)
         findNavController().navigate(action)
