@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.test.bostatask.data.models.UsersModel
-import com.test.task.databinding.ItemLayoutBinding
+import com.test.bostatask.databinding.ItemLayoutBinding
 
 class UsersAdapter(private var usersList : ArrayList<UsersModel.UsersModelItem>,
                    private val itemClickListener : (userID:Long,userName:String,userAddress:String)->Unit) : RecyclerView.Adapter<UsersAdapter.ViewHolder>(){

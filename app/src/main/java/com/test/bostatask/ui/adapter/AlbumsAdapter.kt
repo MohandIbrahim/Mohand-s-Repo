@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.test.bostatask.data.models.AlbumsModel
-import com.test.task.databinding.ItemLayoutBinding
+import com.test.bostatask.databinding.ItemLayoutBinding
 
 class AlbumsAdapter(private var albumsList: ArrayList<AlbumsModel.AlbumsModelItem>,
                     private val itemClickListener: (albumId: Long) -> Unit) : RecyclerView.Adapter<AlbumsAdapter.ViewHolder>()

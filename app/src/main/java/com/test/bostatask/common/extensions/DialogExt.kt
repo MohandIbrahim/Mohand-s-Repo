@@ -6,7 +6,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.test.task.databinding.PhotoDialogBinding
+import com.test.bostatask.databinding.PhotoDialogBinding
 
 fun Fragment.openPhotoDialog(photoTitle:String, photoUrl:String)  = activity?.openPhotoDialog(photoTitle,photoUrl)
 fun Activity.openPhotoDialog(photoTitle:String, photoUrl:String) = photoDialog(photoTitle,photoUrl)

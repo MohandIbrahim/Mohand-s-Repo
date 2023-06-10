@@ -8,8 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.test.bostatask.data.models.navigation.UserArgs
+import com.test.bostatask.databinding.FragmentUsersBinding
 import com.test.bostatask.ui.adapter.UsersAdapter
-import com.test.task.databinding.FragmentUsersBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

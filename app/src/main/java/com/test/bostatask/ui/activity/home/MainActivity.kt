@@ -3,14 +3,14 @@ package com.test.bostatask.ui.activity.home
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
-import com.test.task.R
-import com.test.task.databinding.ActivityMainBinding
+import com.test.bostatask.R
+import com.test.bostatask.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
-     private lateinit var binding: ActivityMainBinding
+     private lateinit var binding:ActivityMainBinding
      override fun onCreate(savedInstanceState: Bundle?) {
          super.onCreate(savedInstanceState)
          binding = ActivityMainBinding.inflate(layoutInflater)
