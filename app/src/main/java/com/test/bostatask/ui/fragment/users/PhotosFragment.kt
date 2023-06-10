@@ -11,12 +11,10 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
 import com.test.bostatask.common.extensions.openPhotoDialog
-import com.test.bostatask.common.extensions.showToast
 import com.test.bostatask.data.models.PhotosModel
-import com.test.bostatask.databinding.FragmentPhotosBinding
 import com.test.bostatask.ui.adapter.PhotosAdapter
+import com.test.task.databinding.FragmentPhotosBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlin.collections.ArrayList
 
 @AndroidEntryPoint
 class PhotosFragment : Fragment() {

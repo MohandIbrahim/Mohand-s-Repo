@@ -1,12 +1,11 @@
 package com.test.bostatask.ui.adapter
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.test.bostatask.common.extensions.loadImageFromUrl
 import com.test.bostatask.data.models.PhotosModel
-import com.test.bostatask.databinding.PhotoItemBinding
+import com.test.task.databinding.PhotoItemBinding
 
 class PhotosAdapter (private var photosList: ArrayList<PhotosModel.PhotosModelItem>,
                      private val itemClickListener: (photoTitle:String, photoUrl:String) -> Unit) : RecyclerView.Adapter<PhotosAdapter.ViewHolder>() {

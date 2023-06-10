@@ -6,7 +6,7 @@ import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.bumptech.glide.Priority
 import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.test.bostatask.R
+import com.test.task.R
 
 @BindingAdapter(value = ["loadImageFromUrl"])
 fun ImageView.loadImageFromUrl(url: String?) {
