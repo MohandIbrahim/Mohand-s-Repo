@@ -13,6 +13,7 @@ Screen 3 : Shows a list of photos which can be pressed to open a dialog. It has 
 
 
 Technologies Used :
+
 Kotlin
 
 MVVM
