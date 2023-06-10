@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/usersFragment">
+    <fragment
+        android:id="@+id/usersFragment"
+        android:name="com.test.bostatask.ui.fragment.users.UsersFragment"
+        android:label="UsersFragment" >
+        <action
+            android:id="@+id/action_usersFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.test.bostatask.ui.fragment.users.ProfileFragment"
+        android:label="ProfileFragment" >
+        <action
+            android:id="@+id/action_profileFragment_to_photosFragment"
+            app:destination="@id/photosFragment" />
+        <argument
+            android:name="userArgs"
+            app:argType="com.test.bostatask.data.models.navigation.UserArgs" />
+    </fragment>
+    <fragment
+        android:id="@+id/photosFragment"
+        android:name="com.test.bostatask.ui.fragment.users.PhotosFragment"
+        android:label="PhotosFragment" >
+        <argument
+            android:name="albumId"
+            app:argType="long" />
+    </fragment>
+</navigation>
