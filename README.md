@@ -20,7 +20,7 @@ MVVM
 
 Android Jetpack ( navigation and other useful functions )
 
-Retrofoit
+Retrofit
 
 Hilt Dagger and singleton pattern
 
